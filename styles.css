@@ -1,0 +1,84 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+.nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.theme-toggle label {
+    margin-right: 10px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--hero-bg);
+    color: var(--text-color);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Light Mode Variables */
+:root {
+    --primary-bg: white;
+    --hero-bg: #F3F4F6;
+    --text-color: #333;
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+body.dark-mode nav {
+    background-color: #1A1A1A;
+}
+
+body.dark-mode .hero {
+    background-color: #1C1C1C;
+}
+
+body.dark-mode .hero button {
+    background-color: #4CAF50;
+}
+
+body.dark-mode .hero button:hover {
+    background-color: #45a049;
+}
