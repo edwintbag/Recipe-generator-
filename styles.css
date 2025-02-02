@@ -1,4 +1,4 @@
-/* Base Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -9,9 +9,42 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     background-color: var(--primary-bg);
     color: var(--text-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hide nav links on small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
 .nav .logo {
@@ -81,4 +114,108 @@ body.dark-mode .hero button {
 
 body.dark-mode .hero button:hover {
     background-color: #45a049;
+}
+
+
+
+
+
+
+.recipe-card .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: gray;
+}
+
+.favorite-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.favorite-btn.active {
+    background-color: red;
+}
+
+/* Loading Animation */
+.loading {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* Search & Filter Section */
+.search-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 250px;
+}
+
+@media (max-width: 480px) {
+    .search-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Recipe Grid */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    background-color: var(--hero-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .recipe-card:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.pagination-controls button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#toggleScroll {
+    margin-left: 10px;
 }
